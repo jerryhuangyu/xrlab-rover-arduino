@@ -2,7 +2,7 @@
 //#include "encoder.h"
 unsigned long previousMillis;
 unsigned long currentMillis;
-long interval = 250;
+long interval = 100;
 
 void setup()
 {
@@ -25,9 +25,9 @@ void loop()
   {
     previousMillis = currentMillis;
     printencoder();
-    Serial.print(currentMillis);
-    Serial.print(" : ");
-    Serial.print(previousMillis);
+    //    Serial.print(currentMillis);
+    //    Serial.print(" : ");
+    //    Serial.print(previousMillis);
   }
 }
 void printencoder()

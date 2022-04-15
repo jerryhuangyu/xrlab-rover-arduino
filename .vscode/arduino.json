@@ -1,5 +1,6 @@
 {
     "sketch": "combine_encoder_command\\combine_encoder_command.ino",
     "configuration": "cpu=atmega2560",
-    "board": "arduino:avr:mega"
+    "board": "arduino:avr:mega",
+    "port": "COM5"
 }

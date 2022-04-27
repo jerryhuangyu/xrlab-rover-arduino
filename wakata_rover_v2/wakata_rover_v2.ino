@@ -2,12 +2,13 @@
 //#include "encoder.h"
 unsigned long previousMillis;
 unsigned long currentMillis;
-long interval = 1000;
+long interval = 100;
 
 void setup()
 {
   Serial.begin(115200);
   Serial3.begin(115200);
+  Serial.println("Ready");
   Serial3.write("Ready");
   Mecaunm_Pid_Init();
   Motor_Init();
@@ -39,9 +40,9 @@ void printencoder()
   Serial.print(",輪2:");
   Serial.print(ENCODER_2.last_count);
   Serial.print(",輪3:");
-  Serial.print(ENCODER_3.cmd_vel);
+  Serial.print(ENCODER_3.last_count);
   Serial.print(",輪4:");
-  Serial.print(ENCODER_4.cmd_vel);
+  Serial.print(ENCODER_4.last_count);
   Serial.println();
 }
 
@@ -52,15 +53,38 @@ void taking_command()
     char x = Serial3.read();
     switch (x)
     {
-    case 'a':
-      Set_Mecaunm_Position(500, 50);
-      Serial.print(" O ");
-      break;
     case 's':
       STOP();
       break;
     case 'w':
+      ADVANCE();
+      break;
+    case 'x':
       BACK();
+      break;
+    case 'a':
+      LEFT_2();
+      break;
+    case 'd':
+      RIGHT_2();
+      break;
+    case 'q':
+      LEFT_1();
+      break;
+    case 'z':
+      LEFT_3();
+      break;
+    case 'e':
+      RIGHT_1();
+      break;
+    case 'c':
+      RIGHT_3();
+      break;
+    case 'v':
+      CCW();
+      break;
+    case 'b':
+      CW();
       break;
     default:
       break;

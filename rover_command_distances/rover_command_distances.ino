@@ -1,24 +1,35 @@
-#include "mecaunm.h"
+#include "mecanum.h"
 
-void setup() {
+void setup()
+{
   // put your setup code here, to run once:
   Serial.begin(115200);
   Mecaunm_Pid_Init();
   Motor_Init();
   Encoder_Init();
-  
-  //GoFor300mm();
+
+  // GoFor300mm();
 }
 
-void loop() {
+void loop()
+{
   // put your main code here, to run repeatedly:
-  while(Serial.available()){
+  while (Serial.available())
+  {
     char x = Serial.read();
-    switch(x){
-      case 'a': GoFor300mm();  break;
-      case 's': STOP();        break;
-      case 'd': BACK();        break;
-      default: break;
+    switch (x)
+    {
+    case 'a':
+      GoFor300mm();
+      break;
+    case 's':
+      STOP();
+      break;
+    case 'd':
+      BACK();
+      break;
+    default:
+      break;
     }
   }
 }

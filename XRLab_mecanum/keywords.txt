@@ -1,0 +1,31 @@
+#######################################
+# Syntax Coloring Map MECAUNM
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+PIDDEF	KEYWORD1	
+MOTORDEF	KEYWORD1	
+ENCODERDEF	KEYWORD1	
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+MOTOR_1		KEYWORD2
+MOTOR_2		KEYWORD2
+MOTOR_3		KEYWORD2
+MOTOR_4		KEYWORD2
+ENCODER_1	KEYWORD2
+ENCODER_2	KEYWORD2
+ENCODER_3	KEYWORD2
+ENCODER_4	KEYWORD2
+V_PID	KEYWORD2	
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+WHEEL	LITERAL1
+REDUCTION_RATIO	LITERAL1
+MOTOR_SPEED	LITERAL1

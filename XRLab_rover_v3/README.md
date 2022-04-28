@@ -24,7 +24,7 @@ void loop(){
 ```
 ## [XRLab_mecanum.zip](../XRLab_mecanum.zip) is an own Arduino library containing 4 part:
 ### [encoder.h](../XRLab_mecanum/encoder.h)
-Use the encoder to cause the change of the square wave in the process of rotation, and send it back through the special pins (mega: 2, 3, 18, 19) to trigger the attachInterrupt function on the mega board to count.
+Rotation will cause the square wave received by the encoder to change, and send it back through the special pins (mega: 2, 3, 18, 19) to trigger the attachInterrupt function on the mega board to count.
 
 ![encoder](../images/encoder.jpg)
 

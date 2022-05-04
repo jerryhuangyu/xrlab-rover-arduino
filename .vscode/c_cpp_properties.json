@@ -5,6 +5,7 @@
             "name": "Arduino",
             "compilerPath": "D:\\Users\\jerry\\Desktop\\arduino-1.8.19\\hardware\\tools\\avr\\bin\\avr-g++",
             "compilerArgs": [
+                "-w",
                 "-std=gnu++11",
                 "-fpermissive",
                 "-fno-exceptions",
@@ -17,9 +18,7 @@
             "includePath": [
                 "D:\\Users\\jerry\\Desktop\\arduino-1.8.19\\hardware\\arduino\\avr\\cores\\arduino",
                 "D:\\Users\\jerry\\Desktop\\arduino-1.8.19\\hardware\\arduino\\avr\\variants\\mega",
-                "D:\\Users\\jerry\\Desktop\\arduino-1.8.19\\libraries\\XRLab_mecaunm",
                 "D:\\Users\\jerry\\Documents\\Arduino\\libraries\\ros_lib",
-                "D:\\Users\\jerry\\Documents\\Arduino\\libraries\\TimerFive",
                 "d:\\users\\jerry\\desktop\\arduino-1.8.19\\hardware\\tools\\avr\\lib\\gcc\\avr\\7.3.0\\include",
                 "d:\\users\\jerry\\desktop\\arduino-1.8.19\\hardware\\tools\\avr\\lib\\gcc\\avr\\7.3.0\\include-fixed",
                 "d:\\users\\jerry\\desktop\\arduino-1.8.19\\hardware\\tools\\avr\\avr\\include"

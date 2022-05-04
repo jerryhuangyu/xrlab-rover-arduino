@@ -1,7 +1,7 @@
 {
-    "sketch": "wakata_rover_v3\\wakata_rover_v3.ino",
-    "configuration": "cpu=atmega2560",
+    "sketch": "Power_state\\Power_state.ino",
     "board": "arduino:avr:mega",
     "port": "COM5",
-    "programmer": "arduino:avrisp"
+    "programmer": "arduino:avrisp",
+    "configuration": "cpu=atmega2560"
 }

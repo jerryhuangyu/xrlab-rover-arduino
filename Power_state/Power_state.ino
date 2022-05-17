@@ -4,11 +4,11 @@
 void messageCb( const std_msgs::Bool& power_state){
   if(power_state.data)
   {
-    digitalWrite(LED_BUILTIN, LOW);
+    digitalWrite(13, LOW);
   }
   else
   {
-    digitalWrite(LED_BUILTIN, HIGH);
+    digitalWrite(13, HIGH);
   }
 }
 
@@ -17,7 +17,7 @@ ros::Subscriber<std_msgs::Bool> sub("nozzle/power_state", &messageCb );
 
 void setup()
 { 
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(13, OUTPUT);
   nh.initNode();
   nh.subscribe(sub);
 }

@@ -1,5 +1,5 @@
 {
-    "sketch": "Power_state\\Power_state.ino",
+    "sketch": "XRLab_rover_v3\\XRLab_rover_v3.ino",
     "board": "arduino:avr:mega",
     "port": "COM5",
     "programmer": "arduino:avrisp",

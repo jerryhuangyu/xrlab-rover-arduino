@@ -36,14 +36,6 @@ void motor_aimd(const std_msgs::Float32 &input_msg)
   aim_D = aim * 55 / 6.283;
 }
 
-// velocity ComputeOdometry()
-// {
-//   velocity vel = ComputeSingleWheelVel();
-//   vx = (vel.a + vel.b + vel.c + vel.d)*(38.085778f/4);
-//   vy = (-vel.a + vel.b + vel.c - vel.d)*(38.085778f/4);
-//   wz = (-vel.a + vel.b - vel.c + vel.d)*(38.085778f/4)/(0.1069+0.09);
-// }
-
 ros::Subscriber<std_msgs::Float32> subfl("motor/front/left", &motor_aima);
 ros::Subscriber<std_msgs::Float32> subfr("motor/front/right", &motor_aimb);
 ros::Subscriber<std_msgs::Float32> subrl("motor/rear/left", &motor_aimc);
@@ -94,14 +86,7 @@ void loop()
   realrl.data = vel.c;
   realrr.data = vel.d;
 
-//  pubfl.publish(&realfl);
-//  pubfr.publish(&realfr);
-//  pubrl.publish(&realrl);
-//  pubrr.publish(&realrr);
-  
-//  nh.spinOnce();
-
-  // every 100 ms loop
+  // every 20 ms loop = 50hz
   currentMillis = millis();
   if ((currentMillis - previousMillis) >= interval)
   {
@@ -111,20 +96,6 @@ void loop()
     pubfr.publish(&realfr);
     pubrl.publish(&realrl);
     pubrr.publish(&realrr);
-    // printencoder();
   }
   nh.spinOnce();
-}
-
-void printencoder()
-{
-  Serial.print(",輪1:");
-  Serial.print(ENCODER_1.last_count);
-  Serial.print(",輪2:");
-  Serial.print(ENCODER_2.last_count);
-  Serial.print(",輪3:");
-  Serial.print(ENCODER_3.last_count);
-  Serial.print(",輪4:");
-  Serial.print(ENCODER_4.last_count);
-  Serial.println();
 }

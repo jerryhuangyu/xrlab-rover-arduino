@@ -1,4 +1,5 @@
 #include "mecanum.h"
+WHEELVELDEF WheelVel;
 
 //    ↑A-----B↑
 //     |  ↑  |
@@ -144,6 +145,17 @@ void Follow_Ros(float pwm_A, float pwm_B, float pwm_C, float pwm_D)
     Set_Aim_Speed(&MOTOR_2, aim_B);
     Set_Aim_Speed(&MOTOR_3, -aim_C);
     Set_Aim_Speed(&MOTOR_4, aim_D);
+}
+
+velocity ComputeSingleWheelVel(void)
+{
+    // 4.35091 = (20*239.3/1100)/(50000/1000000)/1000
+    float encoder_to_wheel_vel = 0.00435091f;
+    WheelVel.a = ENCODER_1.last_count*encoder_to_wheel_vel;
+    WheelVel.b = ENCODER_2.last_count*encoder_to_wheel_vel;
+    WheelVel.c = ENCODER_3.last_count*encoder_to_wheel_vel;
+    WheelVel.d = ENCODER_4.last_count*encoder_to_wheel_vel;
+    return WheelVel;
 }
 //    ↑A-----B↑
 //     |  ↑  |

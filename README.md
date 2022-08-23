@@ -31,7 +31,7 @@
 
 ## XRLab rover v4
 
-刪除: 非必要註釋
+刪除: 非必要註釋  
 刪除: printencoder()
 
 ## XRLab rover v5

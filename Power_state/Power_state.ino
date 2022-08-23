@@ -18,6 +18,7 @@ ros::Subscriber<std_msgs::Bool> sub("nozzle/power_state", &messageCb );
 void setup()
 { 
   pinMode(13, OUTPUT);
+  digitalWrite(13, HIGH);
   nh.initNode();
   nh.subscribe(sub);
 }
@@ -25,4 +26,5 @@ void setup()
 void loop()
 {  
   nh.spinOnce();
+  delay(100); // lower hz will cause error
 }
